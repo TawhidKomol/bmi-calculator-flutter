@@ -1,5 +1,5 @@
-import 'main.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -53,18 +53,26 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             )),
+            Container(
+              color: const Color(0xFFEB1555),
+              margin: const EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: 70.0,
+            )
           ],
         ));
   }
 }
 
 class Card extends StatelessWidget {
-  Card({required this.colour});
+  Card({required this.colour, this.cardChild});
   final Color colour;
+  final Widget cardChild;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: colour,
