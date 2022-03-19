@@ -24,6 +24,17 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: Card(
                     colour: const Color(0xFF1A1B2C),
+                    cardChild: Column(
+                      children: const [
+                        Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80.0,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
@@ -65,7 +76,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class Card extends StatelessWidget {
-  Card({required this.colour, this.cardChild});
+  Card({required this.colour, required this.cardChild});
   final Color colour;
   final Widget cardChild;
 
